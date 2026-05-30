@@ -10,7 +10,7 @@ jobs:
       - name: Download IPA from Google Drive
         run: |
          pip3 install gdown --break-system-packages
-          gdown "https://drive.google.com/uc?id=10Lh2sIzNzB5YL3Xrf9mzwcfaHcfeFO_y" -O App.ipa
+          gdown "https://drive.google.com/file/d/1mvZxzIGoXyBTiWC5UfuM8Q5oKJRhAyF0" -O App.ipa
           ls -lh App.ipa
 
       - name: Upload IPA to App Store Connect
