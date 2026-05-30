@@ -1,0 +1,22 @@
+name: Upload IPA to App Store
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: macos-latest
+    steps:
+      - name: Upload IPA to App Store Connect
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          echo "${{ secrets.IPA_BASE64 }}" | base64 --decode > App.ipa
+          xcrun altool --upload-app \
+            --type ios \
+            --file App.ipa \
+            --username "$APPLE_ID" \
+            --password "$APPLE_PASSWORD" \
+            --asc-provider "$APPLE_TEAM_ID"
