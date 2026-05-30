@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Download IPA from Google Drive
         run: |
-          pip3 install gdown
+         pip3 install gdown --break-system-packages
           gdown "https://drive.google.com/uc?id=10Lh2sIzNzB5YL3Xrf9mzwcfaHcfeFO_y" -O App.ipa
           ls -lh App.ipa
 
