@@ -7,16 +7,17 @@ jobs:
   upload:
     runs-on: macos-latest
     steps:
-      - name: Upload IPA to App Store Connect
-        env:
-          APPLE_ID: ${{ secrets.APPLE_ID }}
-          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
-          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      - name: Download IPA from Google Drive
         run: |
-          echo "${{ secrets.IPA_BASE64 }}" | base64 --decode > App.ipa
+          pip3 install gdown
+          gdown "https://drive.google.com/uc?id=10Lh2sIzNzB5YL3Xrf9mzwcfaHcfeFO_y" -O App.ipa
+          ls -lh App.ipa
+
+      - name: Upload IPA to App Store Connect
+        run: |
           xcrun altool --upload-app \
             --type ios \
             --file App.ipa \
-            --username "$APPLE_ID" \
-            --password "$APPLE_PASSWORD" \
-            --asc-provider "$APPLE_TEAM_ID"
+            --username "${{ secrets.APPLE_ID }}" \
+            --password "${{ secrets.APPLE_PASSWORD }}" \
+            --asc-provider "${{ secrets.APPLE_TEAM_ID }}"
