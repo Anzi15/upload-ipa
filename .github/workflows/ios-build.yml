@@ -1,0 +1,110 @@
+name: Build and Deploy iOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Sync Capacitor
+        run: npx cap sync ios
+
+      - name: Setup CocoaPods
+        run: |
+          cd ios/App
+          pod install
+
+      - name: Install App Store Connect API Key
+        env:
+          API_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+        run: |
+          mkdir -p ~/private_keys
+          echo "$API_KEY_BASE64" | base64 --decode > ~/private_keys/AuthKey_${KEY_ID}.p8
+
+      - name: Archive iOS App
+        env:
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          cd ios/App
+          xcodebuild archive \
+            -workspace App.xcworkspace \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -archivePath $RUNNER_TEMP/App.xcarchive \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath ~/private_keys/AuthKey_${KEY_ID}.p8 \
+            -authenticationKeyID ${KEY_ID} \
+            -authenticationKeyIssuerID ${ISSUER_ID} \
+            DEVELOPMENT_TEAM=${TEAM_ID}
+
+      - name: Export IPA
+        env:
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+        run: |
+          cat > $RUNNER_TEMP/ExportOptions.plist << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>app-store-connect</string>
+            <key>signingStyle</key>
+            <string>automatic</string>
+          </dict>
+          </plist>
+          EOF
+
+          xcodebuild -exportArchive \
+            -archivePath $RUNNER_TEMP/App.xcarchive \
+            -exportPath $RUNNER_TEMP/export \
+            -exportOptionsPlist $RUNNER_TEMP/ExportOptions.plist \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath ~/private_keys/AuthKey_${KEY_ID}.p8 \
+            -authenticationKeyID ${KEY_ID} \
+            -authenticationKeyIssuerID ${ISSUER_ID}
+
+      - name: Upload to App Store Connect
+        env:
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+        run: |
+          xcrun altool --upload-app \
+            --type ios \
+            --file "$RUNNER_TEMP/export/App.ipa" \
+            --apiKey "${KEY_ID}" \
+            --apiIssuer "${ISSUER_ID}"
+
+      - name: Upload Build Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-build-artifacts
+          path: |
+            ${{ runner.temp }}/export
+            ~/Library/Developer/Xcode/DerivedData
