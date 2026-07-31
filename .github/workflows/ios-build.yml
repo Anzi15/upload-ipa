@@ -25,15 +25,22 @@ jobs:
         run: npm ci
 
       - name: Build Next.js
+        env:
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
         run: npm run build
 
       - name: Sync Capacitor
         run: npx cap sync ios
 
-      - name: Setup CocoaPods
+      - name: Detect workspace vs project
+        id: detect
         run: |
           cd ios/App
-          pod install
+          if [ -d "App.xcworkspace" ]; then
+            echo "target=-workspace App.xcworkspace" >> "$GITHUB_OUTPUT"
+          else
+            echo "target=-project App.xcodeproj" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Install App Store Connect API Key
         env:
@@ -48,10 +55,11 @@ jobs:
           KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
           ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          BUILD_TARGET: ${{ steps.detect.outputs.target }}
         run: |
           cd ios/App
           xcodebuild archive \
-            -workspace App.xcworkspace \
+            ${BUILD_TARGET} \
             -scheme App \
             -configuration Release \
             -sdk iphoneos \
