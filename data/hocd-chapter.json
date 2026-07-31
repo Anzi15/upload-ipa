@@ -1,0 +1,1137 @@
+[
+  {
+    "id": "chapter1",
+    "title": "HOCD & OCD Basics",
+    "description": "Learn the fundamentals of HOCD, OCD, intrusive thoughts, and how to manage them.",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Do you want to know what HOCD is and how it comes to be?",
+        "audioFile": [
+          {
+            "title": "What is HOCD and How does it come to be?",
+            "youtubeUrl": "https://youtu.be/bld7HFUvn2g?si=n4LVI6H0q7YMHNcn",
+            "thumbnail": "/1.png"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Have you ever wondered how to recover from HOCD faster?",
+        "audioFile": [
+          {
+            "title": "Do you know How to Recover from HOCD faster?",
+            "youtubeUrl": "https://youtu.be/ETskpKoTLuE?si=3gMBfpvK7hcRJXlB",
+            "thumbnail": "/2.png"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Do you want to understand what thinking is and how to stop endless thoughts?",
+        "audioFile": [
+          {
+            "title": "What Is Thinking & How To Stop Thinking: Thoughts!",
+            "youtubeUrl": "https://youtu.be/CQ2klpwUWbw?si=RUuSJPlRtALkcHUL",
+            "thumbnail": "/4.png"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Do you want to know why brain suggestions (thoughts) are not credible in OCD or HOCD?",
+        "audioFile": [
+          {
+            "title": "Why Brain Suggestions (Thoughts) Are Not Credible (OCD, HOCD)",
+            "youtubeUrl": "https://youtu.be/bVvMl8jZhQM?si=0vtcjElsfHoLqtXl",
+            "thumbnail": "/3.png"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Do you want to explore OCD and its roots in a nutshell?",
+        "audioFile": [
+          {
+            "title": "OCD & Its Roots In A Nut Shell!",
+            "youtubeUrl": "https://youtu.be/geoCeeldg1w?si=LY4yxpV15DFJFezn",
+            "thumbnail": "/5.png"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "text": "Have you ever wished you could delete your memory?",
+        "audioFile": [
+          {
+            "title": "How To Delete Your Memory!",
+            "youtubeUrl": "https://youtu.be/UvUTJBp5_CI?si=EadvgrzBZj2XNrzI",
+            "thumbnail": "/6.png"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "text": "Do you want to learn how to delete something in your mind?",
+        "audioFile": [
+          {
+            "title": "How To Delete Something In Your Mind!",
+            "youtubeUrl": "https://youtu.be/NZKW1E1-0g0?si=ejhmxLmp3XEOx__Z",
+            "thumbnail": "/7.png"
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "text": "Do you want to know how to tell if it is HOCD?",
+        "audioFile": [
+          {
+            "title": "How To Tell If It Is HOCD?",
+            "youtubeUrl": "https://youtu.be/ivLtaZLUGR0?si=lFdjSNAVFbSNkLp2",
+            "thumbnail": "/8.png"
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "text": "Have you ever wondered how to handle OCD and obsessive compulsive disorder?",
+        "audioFile": [
+          {
+            "title": "Handling OCD Obsessive Compulsive Disorder .",
+            "youtubeUrl": "https://youtu.be/qyb7gPWieF4?si=65qYuSto8EqyiGhI",
+            "thumbnail": "/9.png"
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "text": "Do you want to find out if you are suffering from HOCD?",
+        "audioFile": [
+          {
+            "title": "Are You Suffering From HOCD?",
+            "youtubeUrl": "https://youtu.be/9o03LrfJ67A?si=VVCN45gQmyTDkJKK",
+            "thumbnail": "/10.png"
+          }
+        ]
+      },
+      {
+        "id": "q11",
+        "text": "Do you want to know why some intrusive thoughts feel like you actually thought of them?",
+        "audioFile": [
+          {
+            "title": "Why Some Intrusive Thoughts Feel You Actually Thought Of Them?",
+            "youtubeUrl": "https://youtu.be/7rg9Sj9sSHU?si=gwlKF-O8u9ZNbI8C",
+            "thumbnail": "/11.png"
+          }
+        ]
+      },
+      {
+        "id": "q12",
+        "text": "Do you want to learn how to get rid of intrusive thoughts, ROCD, and the rest?",
+        "audioFile": [
+          {
+            "title": "How Can You Get Rid Of Intrusive Thoughts ROCD &  The Rest?",
+            "youtubeUrl": "https://youtu.be/iFmkf894CbM?si=lHfV6GNxEwAaoZsY",
+            "thumbnail": "/12.png"
+          }
+        ]
+      },
+      {
+        "id": "q13",
+        "text": "Do you want to understand obsession, compulsion, and habit in OCD?",
+        "audioFile": [
+          {
+            "title": "Obsession, Compulsion And Habit In OCD?",
+            "youtubeUrl": "https://youtu.be/1eB46fLOTlc?si=s0IhOlz-MqrYSjuf",
+            "thumbnail": "/13.png"
+          }
+        ]
+      },
+      {
+        "id": "q14",
+        "text": "Do you want to know what HOCD is and how to understand it?",
+        "audioFile": [
+          {
+            "title": "What Is HOCD And How To Understand It",
+            "youtubeUrl": "https://youtu.be/BmHZNG682ew?si=7pmnG3n3sJg9ZgeY",
+            "thumbnail": "/15.png"
+          }
+        ]
+      },
+      {
+        "id": "q15",
+        "text": "Do you want to know why she is scared to be bi (HOCD)?",
+        "audioFile": [
+          {
+            "title": "She Is Scared To Be Bi! HOCD",
+            "youtubeUrl": "https://youtu.be/gpIW836faj8?si=FWT5mMOeWCY9I-3-",
+            "thumbnail": "/14.png"
+          }
+        ]
+      },
+      {
+        "id": "q16",
+        "text": "Do you want to explore HOCD assurance, yes or no, and why?",
+        "audioFile": [
+          {
+            "title": "HOCD Assurance! Yes or No & Why?",
+            "youtubeUrl": "https://youtu.be/meX6JdoUyHE?si=homQaggKDLK4I_oO",
+            "thumbnail": "/16.png"
+          }
+        ]
+      },
+      {
+        "id": "q17",
+        "text": "Do you want to know how to use your brain instead of letting your brain use you?",
+        "audioFile": [
+          {
+            "title": "Use Your Brain Do Not Let Your Brain Use You!",
+            "youtubeUrl": "https://youtu.be/Cz3bE_vHdAc?si=b7sqQJBhYoo8XWnu",
+            "thumbnail": "/17.png"
+          }
+        ]
+      },
+      {
+        "id": "q18",
+        "text": "Do you want to understand why you are scared that you are no longer shocked by intrusive thoughts?",
+        "audioFile": [
+          {
+            "title": "I Am Scared That I am No Longer Shocked Of Intrusive Thoughts!",
+            "youtubeUrl": "https://youtu.be/ctzQ-1PFuAY?si=V8oA9eP-40SDmf3R",
+            "thumbnail": "/18.png"
+          }
+        ]
+      },
+      {
+        "id": "q19",
+        "text": "Do you want to know how people got cured from HOCD?",
+        "audioFile": [
+          {
+            "title": "Cured From HOCD",
+            "youtubeUrl": "https://youtu.be/UR0bB8iNDSc?si=G3b0eIRGWkz-xw_d",
+            "thumbnail": "/19.png"
+          }
+        ]
+      },
+      {
+        "id": "q20",
+        "text": "Do you want to know if not being grossed out means you are this (HOCD)?",
+        "audioFile": [
+          {
+            "title": "If I Am Not Grossed Out  Does That Mean I Am This?HOCD",
+            "youtubeUrl": "https://youtu.be/ru0g89a8vVI?si=awu5Oh8fDHLr9mCg",
+            "thumbnail": "/20.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chapter2",
+    "title": "HOCD: Triggers & Behavior",
+    "description": "Explore triggers, responses, and practical steps to handle HOCD-related behaviors.",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Do you want to know the link between porn and HOCD?",
+        "audioFile": [
+          {
+            "title": "What About Porn & HOCD",
+            "youtubeUrl": "https://youtu.be/0siyW1gJV68?si=vjMRXlGL7yisgMPM",
+            "thumbnail": "/21.png"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Do you want to know what to do when intrusive thoughts show up?",
+        "audioFile": [
+          {
+            "title": "What To Do When Intrusive Thoughts Show Up?",
+            "youtubeUrl": "https://youtu.be/OQ0KMlFhWxw?si=iChtBOfLX6VrgFyx",
+            "thumbnail": "/22.png"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Do you want to know how to get your attraction to girls back when HOCD sucks?",
+        "audioFile": [
+          {
+            "title": "HOCD Sucks Have You Lost Your Attraction To Girls? How To Get It Back?",
+            "youtubeUrl": "https://youtu.be/wmkAhkV-KgI?si=mjN_6AZZ02j99hNE",
+            "thumbnail": "/23.png"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Do you want to know what to do if you have HOCD?",
+        "audioFile": [
+          {
+            "title": "What Do I Do? I Have HOCD!",
+            "youtubeUrl": "https://youtu.be/olz1DDb1Yn8?si=2VUYhglDEyt2Zoln",
+            "thumbnail": "/24.png"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Do you want to know why we believe negative thoughts?",
+        "audioFile": [
+          {
+            "title": "Why We Believe Negative Thoughts?",
+            "youtubeUrl": "https://youtu.be/nVmZgYWaJeE?si=hw1P3g9KfqDScpGL",
+            "thumbnail": "/25.png"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "text": "Do you want to learn the most important facts when dealing with HOCD and what misleads you even more?",
+        "audioFile": [
+          {
+            "title": "Most Important Facts When Dealing With HOCD  & What Misleads You Even More When Dealing With HOCD",
+            "youtubeUrl": "https://youtu.be/yOpk5GSqxwA?si=kGx1AxDQg3EsPzob",
+            "thumbnail": "/26.png"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "text": "Do you want to know how to educate yourself on HOCD and get rid of it?",
+        "audioFile": [
+          {
+            "title": "How To Educate Yourself On HOCD And Get Rid Of It",
+            "youtubeUrl": "https://youtu.be/lRZzLdNecug?si=uI0GfKpAPJbMxWig",
+            "thumbnail": "/27.png"
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "text": "Do you want to know what groinal response is in 1 minute (HOCD)?",
+        "audioFile": [
+          {
+            "title": "Groinal Response In 1 Minute! HOCD",
+            "youtubeUrl": "https://youtu.be/ofI0OSJ74w8?si=_mb7l7dhn-mwJXGh",
+            "thumbnail": "/28.png"
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "text": "Do you want to know if HOCD can be cured?",
+        "audioFile": [
+          {
+            "title": "Can HOCD Be Cured?",
+            "youtubeUrl": "https://youtu.be/PX8HWlguLWs?si=e2hJBt-rFhRD60e3",
+            "thumbnail": "/29.png"
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "text": "Do you want to understand what happens when a thought becomes a belief?",
+        "audioFile": [
+          {
+            "title": "When A Thought Becomes A Belief!",
+            "youtubeUrl": "https://youtu.be/TLxsGJYpnXc?si=aabn7uvGJpAgx4jB",
+            "thumbnail": "/30.png"
+          }
+        ]
+      },
+      {
+        "id": "q11",
+        "text": "Do you want to know why loss of attraction happens due to HOCD?",
+        "audioFile": [
+          {
+            "title": "Loss of Attraction Due To HOCD",
+            "youtubeUrl": "https://youtu.be/KUzre0N_BQY?si=ih8l-dUZV59DQ_Nh",
+            "thumbnail": "/31.png"
+          }
+        ]
+      },
+      {
+        "id": "q12",
+        "text": "Do you want to know how to tell it is HOCD?",
+        "audioFile": [
+          {
+            "title": "How To Tell It Is HOCD",
+            "youtubeUrl": "https://youtu.be/ivLtaZLUGR0?si=kmGaI64fhMIb0xFt",
+            "thumbnail": "/32.png"
+          }
+        ]
+      },
+      {
+        "id": "q13",
+        "text": "Do you want to know how to deal with OCD and HOCD when struggling with loss of attraction to girls?",
+        "audioFile": [
+          {
+            "title": "I Have OCD and HOCD And Struggling With Loss of Attraction To Girls?",
+            "youtubeUrl": "https://youtu.be/hGQG_UqgtM0?si=jgpzY6yRGjBdWguP",
+            "thumbnail": "/33.png"
+          }
+        ]
+      },
+      {
+        "id": "q14",
+        "text": "Do you want to know why you overthink and cannot stop thoughts?",
+        "audioFile": [
+          {
+            "title": "Why You Over Think And Can Not Stop Thoughts?",
+            "youtubeUrl": "https://youtu.be/JxC2McyyBYA?si=R3baObnp16FbJbrA",
+            "thumbnail": "/38.png"
+          }
+        ]
+      },
+      {
+        "id": "q15",
+        "text": "Do you want to know if you are what the brain says you are — is the brain you?",
+        "audioFile": [
+          {
+            "title": "Are You What The Brain Says You Are? Is The Brain You?",
+            "youtubeUrl": "https://youtu.be/4hWo0O8r34E?si=i1ulYUumlIzRqAXP",
+            "thumbnail": "/39.png"
+          }
+        ]
+      },
+      {
+        "id": "q16",
+        "text": "Do you want to know if this is also HOCD?",
+        "audioFile": [
+          {
+            "title": "Is This Also HOCD?*",
+            "youtubeUrl": "https://youtu.be/9F9jghza48Y?si=QyOAds7f73L9O4N0",
+            "thumbnail": "/40.png"
+          }
+        ]
+      },
+      {
+        "id": "q17",
+        "text": "Do you want to know if OCD thoughts can come and go throughout the day?",
+        "audioFile": [
+          {
+            "title": "Can OCD Thoughts Come And Go Throughout The Day?*",
+            "youtubeUrl": "https://youtu.be/rZhgdGgptWU?si=HO8imZNSXCpm-ApW",
+            "thumbnail": "/41.png"
+          }
+        ]
+      },
+      {
+        "id": "q18",
+        "text": "Do you want to know the hidden reason behind doing compulsions or repetitive thinking in OCD?",
+        "audioFile": [
+          {
+            "title": "The Hidden Reason Behind Doing The OCD Compulsion or Repetitive Thinking",
+            "youtubeUrl": "https://youtu.be/tE1Hj9pEu04?si=pkEPzMNebVOqGvwg",
+            "thumbnail": "/42.png"
+          }
+        ]
+      },
+      {
+        "id": "q19",
+        "text": "Do you want to know if you will ever get your attraction to women back?",
+        "audioFile": [
+          {
+            "title": "Will You Ever Get Your Attraction To Women Back?",
+            "youtubeUrl": "https://youtu.be/UX9Xz3hY7Ig?si=H_9bvX0lJiyF3PGt",
+            "thumbnail": "/43.png"
+          }
+        ]
+      },
+      {
+        "id": "q20",
+        "text": "Do you want to know if it is okay to watch porn when you are attacked by HOCD?",
+        "audioFile": [
+          {
+            "title": "Is It Ok To Watch Porn When You Are Attacked By HOCD?*",
+            "youtubeUrl": "https://youtu.be/lysz9paPTNg?si=c3MgqroIAJKHhiN2",
+            "thumbnail": "/44.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chapter3",
+    "title": "Why the Brain Does This",
+    "description": "Understand why intrusive thoughts arise, what the brain is doing, and how to respond.",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Do you want to know why your brain wants you to have OCD?",
+        "audioFile": [
+          {
+            "title": "Why Your Brain Wants You To Have OCD?",
+            "youtubeUrl": "https://youtu.be/AFWcHKOByUA?si=Tv8nkzd-QE3zYe8J",
+            "thumbnail": "/45.png"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Do you want to learn how to reverse OCD thinking?",
+        "audioFile": [
+          {
+            "title": "How To Reverse OCD Thinking",
+            "youtubeUrl": "https://youtu.be/l5GtSLbGvzM?si=h8eemr68sShSv0iN",
+            "thumbnail": "/46.png"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Do you want to know how to reach the end of HOCD?",
+        "audioFile": [
+          {
+            "title": "End Of HOCD!",
+            "youtubeUrl": "https://youtu.be/mw8hj2gmvxM?si=NLg-nhJx_fa9lF7i",
+            "thumbnail": "/47.png"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Do you want to get tips for HOCD?",
+        "audioFile": [
+          {
+            "title": "Tips For HOCD!",
+            "youtubeUrl": "https://youtu.be/oTsUh0hpt48?si=j5olLDYe62EFnBdn",
+            "thumbnail": "/48.png"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Do you want to know if you should feel guilty for having intrusive thoughts?",
+        "audioFile": [
+          {
+            "title": "Are You Guilty For Having Intrusive Thoughts?",
+            "youtubeUrl": "https://youtu.be/PYKizqZZleU?si=XgxKy6WovZ61n5oN",
+            "thumbnail": "/49.png"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "text": "Do you want to know the short version of how to get rid of HOCD?",
+        "audioFile": [
+          {
+            "title": "How To Get Rid Of HOCD* Short Version!",
+            "youtubeUrl": "https://youtu.be/jwulHEAHG70?si=xq3sekrg2e37PF6V",
+            "thumbnail": "/50.png"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "text": "Do you want to know the long version of how to get rid of HOCD?",
+        "audioFile": [
+          {
+            "title": "How To Get Rid Of HOCD*  (Long Version)",
+            "youtubeUrl": "https://youtu.be/5dEJFQ413nA?si=kW5VcYOErLtqnAhV",
+            "thumbnail": "/51.png"
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "text": "Do you want to know how to deal with repetitive thoughts?",
+        "audioFile": [
+          {
+            "title": "How To Deal With Repetitive Thoughts?",
+            "youtubeUrl": "https://youtu.be/LiKmefgdQgQ?si=vtM8_pcDqKPA7mM5",
+            "thumbnail": "/52.png"
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "text": "Do you want to learn about HOCD feelings, emotions, false attraction, unwanted arousal, and thoughts?",
+        "audioFile": [
+          {
+            "title": "HOCD Feelings, Emotions, False Attraction, Unwanted Arousal And Thoughts! HOCD",
+            "youtubeUrl": "https://youtu.be/T4egRwe9UHI?si=C3alMZBGhKaZ6QOv",
+            "thumbnail": "/53.png"
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "text": "Do you want to know where your attraction to women went and how to get it back (HOCD)?",
+        "audioFile": [
+          {
+            "title": "Where Did Your Attraction To Women Go? How Can You Get It Back? HOCD",
+            "youtubeUrl": "https://youtu.be/jU_NKQuNGfw?si=uxp5GGbzWmWAC82n",
+            "thumbnail": "/54.png"
+          }
+        ]
+      },
+      {
+        "id": "q11",
+        "text": "Do you want to know why your attraction and libido are not as they used to be while dealing with HOCD?",
+        "audioFile": [
+          {
+            "title": "Why Your Attraction And Libido Is Not As It Used To Be While Dealing With HOCD?",
+            "youtubeUrl": "https://youtu.be/_fMoSe_v_yA?si=khv2A59Ljc1bjIEW",
+            "thumbnail": "/55.png"
+          }
+        ]
+      },
+      {
+        "id": "q12",
+        "text": "Do you want to know why we develop and entertain OCD at all?",
+        "audioFile": [
+          {
+            "title": "Why We Develop And Entertain OCD At All?",
+            "youtubeUrl": "https://youtu.be/MA8zWf6Fj8I?si=1pPAZvJsGq2o75pK",
+            "thumbnail": "/56.png"
+          }
+        ]
+      },
+      {
+        "id": "q13",
+        "text": "Do you want to learn how to delete, reduce, or disappear unwanted memories or thoughts?",
+        "audioFile": [
+          {
+            "title": "How To Delete, Reduce, Disappear Unwanted Memories or Thoughts!",
+            "youtubeUrl": "https://youtu.be/oyzdoYe3F78?si=pY0oCsv8tY5KQ6NY",
+            "thumbnail": "/57.png"
+          }
+        ]
+      },
+      {
+        "id": "q14",
+        "text": "Do you want to know how long it takes until HOCD goes away?",
+        "audioFile": [
+          {
+            "title": "How Long Does It Take Until HOCD Goes Away?",
+            "youtubeUrl": "https://youtu.be/oOb8fTfdaz8?si=d6fJu5BuEnweJhZk",
+            "thumbnail": "/58.png"
+          }
+        ]
+      },
+      {
+        "id": "q15",
+        "text": "Do you want to know why understanding the brain and how intrusive thoughts are created is the cure for HOCD?",
+        "audioFile": [
+          {
+            "title": "HOCD Cure Is To Understand Brain & How Intrusive Thoughts Are Created!",
+            "youtubeUrl": "https://youtu.be/rlmRZxG4nt4?si=rCfoC7qW4xSAjZ1M",
+            "thumbnail": "/59.png"
+          }
+        ]
+      },
+      {
+        "id": "q16",
+        "text": "Do you want to know if there is a permanent way to cure HOCD?",
+        "audioFile": [
+          {
+            "title": "Is There A Permanent Way To Cure HOCD?",
+            "youtubeUrl": "https://youtu.be/5hiH7nT7OUU?si=lOPngc3FOYCovGvc",
+            "thumbnail": "/60.png"
+          }
+        ]
+      },
+      {
+        "id": "q17",
+        "text": "Do you want to know if you should still talk to the girl you like or wait while suffering from HOCD?",
+        "audioFile": [
+          {
+            "title": "I Suffer From HOCD Should I Still Talk To The Girl I Like Or Wait?",
+            "youtubeUrl": "https://youtu.be/1JXPu-OS4YU?si=QU4COUZFQhWCKI4X",
+            "thumbnail": "/61.png"
+          }
+        ]
+      },
+      {
+        "id": "q18",
+        "text": "Do you want to know why we have a conflict with thoughts?",
+        "audioFile": [
+          {
+            "title": "Why We Have A Conflict With Thoughts?",
+            "youtubeUrl": "https://youtu.be/AWvr1NIIxQ8?si=zdXoUB58kuzIaM7j",
+            "thumbnail": "/62.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q19",
+        "text": "Do you want to learn the key to freedom from thoughts?",
+        "audioFile": [
+          {
+            "title": "The Key To Freedom From Thoughts!",
+            "youtubeUrl": "https://youtu.be/EEzeik2ymsU?si=DdxZKUp7bCmzSRrZ",
+            "thumbnail": "/63.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q20",
+        "text": "Do you want to know why it is crucial to train your brain (OCD HOCD)?",
+        "audioFile": [
+          {
+            "title": "Why It Is Crucial To Train Your Brain!  OCD HOCD",
+            "youtubeUrl": "https://youtu.be/_VADbWjJAFQ?si=FGLtYDLWOsOPs8cU",
+            "thumbnail": "/64.PNG"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chapter4",
+    "title": "Recovery & Advanced Concepts",
+    "description": "Practical recovery steps, advanced explanations, and why intrusive thoughts happen.",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Do you want to know why we believe our thoughts?",
+        "audioFile": [
+          {
+            "title": "Why We Believe Our Thoughts?",
+            "youtubeUrl": "https://youtu.be/K52_CUGPO3U?si=wCa_XG-ikacosgSZ",
+            "thumbnail": "/65.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Do you want to learn how to deal with HOCD in 10 minutes?",
+        "audioFile": [
+          {
+            "title": "HOCD Deal With It In 10 Minutes!",
+            "youtubeUrl": "https://youtu.be/LU55NRGeVVE?si=9fsUT1vFMXNOzpne",
+            "thumbnail": "/66.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Do you want to know what is a permanent way to cure intrusive thoughts and HOCD?",
+        "audioFile": [
+          {
+            "title": "What Is A Permanent Way To Cure Intrusive Thoughts HOCD?",
+            "youtubeUrl": "https://youtu.be/XcH9txZppPw?si=bRGFuexuwhUILf1o",
+            "thumbnail": "/67.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Do you want to know why you should stop trying to understand HOCD or the body’s reaction to things?",
+        "audioFile": [
+          {
+            "title": "Stop Trying To Understand HOCD Or Body's Reaction To Things Or Other Beings! HOCD",
+            "youtubeUrl": "https://youtu.be/sZtBlnSANRY?si=zJcrxn66Wxxxo0CE",
+            "thumbnail": "/68.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Do you want to understand HOCD in 13 minutes?",
+        "audioFile": [
+          {
+            "title": "Understanding HOCD In 13 Minutes!",
+            "youtubeUrl": "https://youtu.be/o0gVYaSEBQM?si=-0pxP97JWFQezKvM",
+            "thumbnail": "/69.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "text": "Do you want to know what HOCD is saying to you?",
+        "audioFile": [
+          {
+            "title": "What Does HOCD Is Saying To You?",
+            "youtubeUrl": "https://youtu.be/bld7HFUvn2g?si=TjFpvDwFWVgfs_Wl",
+            "thumbnail": "/87.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "text": "Do you want to know how to deal with HOCD in 58 seconds?",
+        "audioFile": [
+          {
+            "title": "What Is HOCD & How To Deal With It In 58 Seconds!",
+            "youtubeUrl": "https://youtu.be/Kx2n6WTLn84?si=Pm87OUq1ozR6Seuj",
+            "thumbnail": "/86.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "text": "Do you want to know why intrusive thoughts feel so real?",
+        "audioFile": [
+          {
+            "title": "Why Intrusive Thoughts Feel So Real?",
+            "youtubeUrl": "https://youtu.be/hriAl7HNNCg?si=VOg8DSjsB90nvw4q",
+            "thumbnail": "/85.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "text": "Do you want to know what groinal response means in HOCD?",
+        "audioFile": [
+          {
+            "title": "HOCD  Groinal Response!",
+            "youtubeUrl": "https://youtu.be/b_VHwI4tAR0?si=EjFUDkhtbiO2FNLa",
+            "thumbnail": "/84.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "text": "Do you want to know why HOCD gets a foothold in your brain?",
+        "audioFile": [
+          {
+            "title": "Why HOCD Gets A Foothold In Your Brain?*",
+            "youtubeUrl": "https://youtu.be/S7ZLOunzV5w?si=x5SSyI05WkTUBB75",
+            "thumbnail": "/83.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q11",
+        "text": "Do you want to know if you are beyond the brain?",
+        "audioFile": [
+          {
+            "title": "You Are Beyond The Brain!*",
+            "youtubeUrl": "https://youtu.be/UX9xjEeWc88?si=EUWjETaiEp3tQSfO",
+            "thumbnail": "/71.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q12",
+        "text": "Do you want to prove intrusive thoughts (HOCD) are not real?",
+        "audioFile": [
+          {
+            "title": "Let's Prove Intrusive Thoughts (HOCD) Are Bull Sh*t?",
+            "youtubeUrl": "https://youtu.be/T4-YmcZmglc?si=kcULvTh_5viRC0T7",
+            "thumbnail": "/72.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q13",
+        "text": "Do you want to know how the brain being messed up can save you from HOCD worries?",
+        "audioFile": [
+          {
+            "title": "How Muked Up The Brain Is Will Save You From HOCD Worries!",
+            "youtubeUrl": "https://youtu.be/H0fbjoPaHtk?si=lfPtKc35rtC6HU-A",
+            "thumbnail": "/73.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q14",
+        "text": "Do you want to know what to do if you had a spike today (HOCD)?",
+        "audioFile": [
+          {
+            "title": "I Had A Spike Today HOCD!",
+            "youtubeUrl": "https://youtu.be/EA56WEsrflU?si=Wzt2yVbXUjNuhNpb",
+            "thumbnail": "/74.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q15",
+        "text": "Do you want to know why OCD and HOCD are so common?",
+        "audioFile": [
+          {
+            "title": "Why OCD HOCD Is Common?",
+            "youtubeUrl": "https://youtu.be/dA3V3oB3wGc?si=Tv6qggdUep8tH-6K",
+            "thumbnail": "/75.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q16",
+        "text": "Do you want to know how before HOCD challenge you had healthy self-esteem?",
+        "audioFile": [
+          {
+            "title": "Before HOCD Challenge I Had A Healthy Self Esteem",
+            "youtubeUrl": "https://youtu.be/sQBUMZoCV9M?si=Gf-yy_U4rhBBZx8g",
+            "thumbnail": "/76.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q17",
+        "text": "Do you want to know why HOCD is your brain’s production and not yours (Part 2, full version)?",
+        "audioFile": [
+          {
+            "title": "HOCD Is Brain's Production Not Yours! Part  2  (Full Version)",
+            "youtubeUrl": "https://youtu.be/E36QMOM01e8?si=shW9EIFbJs_WdoHH",
+            "thumbnail": "/80.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q18",
+        "text": "Do you want to know why HOCD is your brain’s production and not yours (Part 1 & 2, full version)?",
+        "audioFile": [
+          {
+            "title": "HOCD Is Brain's Production Not Yours! Part 1 & 2  (Full Version)",
+            "youtubeUrl": "https://youtu.be/7N5dbxr7K-8?si=P8i5JDX1pqtosvcE",
+            "thumbnail": "/81.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q19",
+        "text": "Do you want to know why HOCD is your brain’s production and not yours (Part 1)?",
+        "audioFile": [
+          {
+            "title": "HOCD Is Brain's Production Not Yours! Part 1",
+            "youtubeUrl": "https://youtu.be/nVeyc8in75U?si=WzInBhoH31gFfxZf",
+            "thumbnail": "/79.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q20",
+        "text": "Do you want to know what to focus on when HOCD attacks?",
+        "audioFile": [
+          {
+            "title": "What To Focus On When HOCD Attacks+",
+            "youtubeUrl": "https://youtu.be/ezBhJ9OD-9M?si=qItOTYq6aQ4yAx46",
+            "thumbnail": "/82.PNG"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chapter5",
+    "title": "Mastering the Mind (Curated Mix)",
+    "description": "A curated combination of powerful talks — practical, explanatory and recovery-focused selections across HOCD/OCD topics.",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Do you want to explore OCD and its roots in a nutshell?",
+        "audioFile": [
+          {
+            "title": "OCD & Its Roots In A Nut Shell!",
+            "youtubeUrl": "https://youtu.be/geoCeeldg1w?si=LY4yxpV15DFJFezn",
+            "thumbnail": "/5.png"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Do you want to know how to tell if it is HOCD?",
+        "audioFile": [
+          {
+            "title": "How To Tell If It Is HOCD?",
+            "youtubeUrl": "https://youtu.be/ivLtaZLUGR0?si=lFdjSNAVFbSNkLp2",
+            "thumbnail": "/8.png"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Do you want to learn how to get rid of intrusive thoughts, ROCD, and the rest?",
+        "audioFile": [
+          {
+            "title": "How Can You Get Rid Of Intrusive Thoughts ROCD &  The Rest?",
+            "youtubeUrl": "https://youtu.be/iFmkf894CbM?si=lHfV6GNxEwAaoZsY",
+            "thumbnail": "/12.png"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Do you want to know why she is scared to be bi (HOCD)?",
+        "audioFile": [
+          {
+            "title": "She Is Scared To Be Bi! HOCD",
+            "youtubeUrl": "https://youtu.be/gpIW836faj8?si=FWT5mMOeWCY9I-3-",
+            "thumbnail": "/14.png"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Do you want to know how people got cured from HOCD?",
+        "audioFile": [
+          {
+            "title": "Cured From HOCD",
+            "youtubeUrl": "https://youtu.be/UR0bB8iNDSc?si=G3b0eIRGWkz-xw_d",
+            "thumbnail": "/19.png"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "text": "Do you want to know what to do if you have HOCD?",
+        "audioFile": [
+          {
+            "title": "What Do I Do? I Have HOCD!",
+            "youtubeUrl": "https://youtu.be/olz1DDb1Yn8?si=2VUYhglDEyt2Zoln",
+            "thumbnail": "/24.png"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "text": "Do you want to know if HOCD can be cured?",
+        "audioFile": [
+          {
+            "title": "Can HOCD Be Cured?",
+            "youtubeUrl": "https://youtu.be/PX8HWlguLWs?si=e2hJBt-rFhRD60e3",
+            "thumbnail": "/29.png"
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "text": "Do you want to know how to deal with OCD and HOCD when struggling with loss of attraction to girls?",
+        "audioFile": [
+          {
+            "title": "I Have OCD and HOCD And Struggling With Loss of Attraction To Girls?",
+            "youtubeUrl": "https://youtu.be/hGQG_UqgtM0?si=jgpzY6yRGjBdWguP",
+            "thumbnail": "/33.png"
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "text": "Do you want to know if OCD thoughts can come and go throughout the day?",
+        "audioFile": [
+          {
+            "title": "Can OCD Thoughts Come And Go Throughout The Day?*",
+            "youtubeUrl": "https://youtu.be/rZhgdGgptWU?si=HO8imZNSXCpm-ApW",
+            "thumbnail": "/41.png"
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "text": "Do you want to learn how to reverse OCD thinking?",
+        "audioFile": [
+          {
+            "title": "How To Reverse OCD Thinking",
+            "youtubeUrl": "https://youtu.be/l5GtSLbGvzM?si=h8eemr68sShSv0iN",
+            "thumbnail": "/46.png"
+          }
+        ]
+      },
+      {
+        "id": "q11",
+        "text": "Do you want to know the short version of how to get rid of HOCD?",
+        "audioFile": [
+          {
+            "title": "How To Get Rid Of HOCD* Short Version!",
+            "youtubeUrl": "https://youtu.be/jwulHEAHG70?si=xq3sekrg2e37PF6V",
+            "thumbnail": "/50.png"
+          }
+        ]
+      },
+      {
+        "id": "q12",
+        "text": "Do you want to know where your attraction to women went and how to get it back (HOCD)?",
+        "audioFile": [
+          {
+            "title": "Where Did Your Attraction To Women Go? How Can You Get It Back? HOCD",
+            "youtubeUrl": "https://youtu.be/jU_NKQuNGfw?si=uxp5GGbzWmWAC82n",
+            "thumbnail": "/54.png"
+          }
+        ]
+      },
+      {
+        "id": "q13",
+        "text": "Do you want to know how long it takes until HOCD goes away?",
+        "audioFile": [
+          {
+            "title": "How Long Does It Take Until HOCD Goes Away?",
+            "youtubeUrl": "https://youtu.be/oOb8fTfdaz8?si=d6fJu5BuEnweJhZk",
+            "thumbnail": "/58.png"
+          }
+        ]
+      },
+      {
+        "id": "q14",
+        "text": "Do you want to know why we have a conflict with thoughts?",
+        "audioFile": [
+          {
+            "title": "Why We Have A Conflict With Thoughts?",
+            "youtubeUrl": "https://youtu.be/AWvr1NIIxQ8?si=zdXoUB58kuzIaM7j",
+            "thumbnail": "/62.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q15",
+        "text": "Do you want to learn how to deal with HOCD in 10 minutes?",
+        "audioFile": [
+          {
+            "title": "HOCD Deal With It In 10 Minutes!",
+            "youtubeUrl": "https://youtu.be/LU55NRGeVVE?si=9fsUT1vFMXNOzpne",
+            "thumbnail": "/66.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q16",
+        "text": "Do you want to know what HOCD is saying to you?",
+        "audioFile": [
+          {
+            "title": "What Does HOCD Is Saying To You?",
+            "youtubeUrl": "https://youtu.be/bld7HFUvn2g?si=TjFpvDwFWVgfs_Wl",
+            "thumbnail": "/87.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q17",
+        "text": "Do you want to know why HOCD gets a foothold in your brain?",
+        "audioFile": [
+          {
+            "title": "Why HOCD Gets A Foothold In Your Brain?*",
+            "youtubeUrl": "https://youtu.be/S7ZLOunzV5w?si=x5SSyI05WkTUBB75",
+            "thumbnail": "/83.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q18",
+        "text": "Do you want to know what to do if you had a spike today (HOCD)?",
+        "audioFile": [
+          {
+            "title": "I Had A Spike Today HOCD!",
+            "youtubeUrl": "https://youtu.be/EA56WEsrflU?si=Wzt2yVbXUjNuhNpb",
+            "thumbnail": "/74.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q19",
+        "text": "Do you want to know why HOCD is your brain’s production and not yours (Part 2, full version)?",
+        "audioFile": [
+          {
+            "title": "HOCD Is Brain's Production Not Yours! Part  2  (Full Version)",
+            "youtubeUrl": "https://youtu.be/E36QMOM01e8?si=shW9EIFbJs_WdoHH",
+            "thumbnail": "/80.PNG"
+          }
+        ]
+      },
+      {
+        "id": "q20",
+        "text": "Do you want to know more about HOCD and you?",
+        "audioFile": [
+          {
+            "title": "HOCD And You!",
+            "youtubeUrl": "https://youtu.be/v-VerzO3M-U?si=PuonxnhXeh95tDV5",
+            "thumbnail": "/83.PNG"
+          }
+        ]
+      }
+    ]
+  }
+]

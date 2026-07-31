@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PDF → Local Image URLs (client only)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial; padding: 20px; max-width:900px; margin:auto; }
+    .controls { margin-bottom: 12px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+    .thumbs { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:16px; }
+    .card { border:1px solid #ddd; padding:8px; border-radius:8px; background:#fff; }
+    .card img { width:100%; height:auto; display:block; border-radius:6px; }
+    .meta { font-size:13px; margin-top:8px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    button { cursor:pointer; padding:6px 10px; border-radius:6px; border:1px solid #bbb; background:#f7f7f7; }
+    progress { width:220px; height:14px; }
+    small { color:#666; }
+    .url { font-family: monospace; word-break:break-all; font-size:12px; background:#f3f3f3; padding:6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <h1>PDF → Local Image URLs (client-side)</h1>
+  <p>
+    Upload a PDF. Each page will be rendered to an image in your browser and a <strong>local blob URL</strong> will be created for it.
+  </p>
+
+  <div class="controls">
+    <input id="pdfFile" type="file" accept="application/pdf" />
+    <label for="scale">Scale:</label>
+    <input id="scale" type="number" min="0.5" step="0.5" value="2" style="width:70px" />
+    <button id="convertBtn" disabled>Convert PDF → Images</button>
+    <button id="clearBtn" disabled>Clear</button>
+    <div id="statusText" style="margin-left:8px"></div>
+  </div>
+
+  <div id="progressWrap" style="display:none;">
+    <progress id="progressBar" value="0" max="100"></progress>
+    <small id="progressLabel"></small>
+  </div>
+
+  <div class="thumbs" id="thumbs"></div>
+
+  <!-- ✅ Working PDF.js (v2.16.105) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+  </script>
+
+  <script>
+    (async () => {
+      const fileInput = document.getElementById('pdfFile');
+      const convertBtn = document.getElementById('convertBtn');
+      const clearBtn = document.getElementById('clearBtn');
+      const thumbs = document.getElementById('thumbs');
+      const statusText = document.getElementById('statusText');
+      const progressWrap = document.getElementById('progressWrap');
+      const progressBar = document.getElementById('progressBar');
+      const progressLabel = document.getElementById('progressLabel');
+      const scaleInput = document.getElementById('scale');
+
+      let currentBlobUrls = [];
+
+      fileInput.addEventListener('change', () => {
+        convertBtn.disabled = !fileInput.files.length;
+        statusText.textContent = fileInput.files.length ? fileInput.files[0].name : '';
+      });
+
+      clearBtn.addEventListener('click', () => {
+        currentBlobUrls.forEach(u => URL.revokeObjectURL(u));
+        currentBlobUrls = [];
+        thumbs.innerHTML = '';
+        fileInput.value = '';
+        convertBtn.disabled = true;
+        clearBtn.disabled = true;
+        statusText.textContent = '';
+        progressWrap.style.display = 'none';
+      });
+
+      convertBtn.addEventListener('click', async () => {
+        const file = fileInput.files[0];
+        if (!file) return;
+        if (file.type !== 'application/pdf') {
+          alert('Please upload a valid PDF file.');
+          return;
+        }
+
+        convertBtn.disabled = true;
+        clearBtn.disabled = true;
+        thumbs.innerHTML = '';
+        currentBlobUrls.forEach(u => URL.revokeObjectURL(u));
+        currentBlobUrls = [];
+        progressWrap.style.display = 'block';
+        progressBar.value = 0;
+        progressLabel.textContent = '';
+
+        try {
+          const arrayBuffer = await file.arrayBuffer();
+          const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) }).promise;
+
+          const total = pdf.numPages;
+          progressBar.max = total;
+          progressBar.value = 0;
+          progressLabel.textContent = `0 / ${total}`;
+
+          const scale = Math.max(0.5, Number(scaleInput.value) || 2);
+
+          for (let p = 1; p <= total; p++) {
+            progressLabel.textContent = `${p} / ${total}`;
+            progressBar.value = p - 1;
+
+            const page = await pdf.getPage(p);
+            const viewport = page.getViewport({ scale });
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = Math.ceil(viewport.width);
+            canvas.height = Math.ceil(viewport.height);
+
+            await page.render({ canvasContext: ctx, viewport }).promise;
+
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+            const objectUrl = URL.createObjectURL(blob);
+            currentBlobUrls.push(objectUrl);
+
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+              <img src="${objectUrl}" alt="Page ${p}" loading="lazy" />
+              <div class="meta">
+                <strong>Page ${p}</strong>
+                <button class="copyBtn">Copy URL</button>
+                <button class="openBtn">Open</button>
+                <button class="revokeBtn">Revoke</button>
+              </div>
+              <div class="url" title="${objectUrl}">${objectUrl}</div>
+            `;
+            thumbs.appendChild(card);
+
+            const copyBtn = card.querySelector('.copyBtn');
+            const openBtn = card.querySelector('.openBtn');
+            const revokeBtn = card.querySelector('.revokeBtn');
+            const urlDiv = card.querySelector('.url');
+
+            copyBtn.addEventListener('click', async () => {
+              try {
+                await navigator.clipboard.writeText(objectUrl);
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => copyBtn.textContent = 'Copy URL', 1200);
+              } catch (e) {
+                alert('Copy failed. Copy manually.');
+              }
+            });
+
+            openBtn.addEventListener('click', () => {
+              window.open(objectUrl, '_blank');
+            });
+
+            revokeBtn.addEventListener('click', () => {
+              URL.revokeObjectURL(objectUrl);
+              const idx = currentBlobUrls.indexOf(objectUrl);
+              if (idx !== -1) currentBlobUrls.splice(idx, 1);
+              urlDiv.textContent = '[revoked]';
+              card.querySelector('img').src = '';
+              revokeBtn.disabled = true;
+            });
+
+            await new Promise(r => setTimeout(r, 80));
+            progressBar.value = p;
+          }
+
+          progressLabel.textContent = `Done — ${total} page(s) processed`;
+          progressBar.value = progressBar.max;
+          clearBtn.disabled = false;
+        } catch (err) {
+          console.error(err);
+          alert('Error while converting PDF. See console for details.');
+          convertBtn.disabled = false;
+          clearBtn.disabled = false;
+          progressWrap.style.display = 'none';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
