@@ -103,6 +103,44 @@ function CheckoutInner() {
   // Which UID to save to?
   const effectiveUID = fromApp ? appUID : user?.uid;
 
+  const handleRevenueCatPurchase = async () => {
+    if (!effectiveUID) {
+      toast({ title: "Please sign in first to save your purchase.", variant: "destructive" });
+      return;
+    }
+    setProcessing(true);
+    try {
+      const { purchaseRevenueCatProduct, purchaseRevenueCatPackage, getRevenueCatOfferings } = await import("@/lib/revenuecat");
+      
+      let customerInfo = null;
+      const offerings = await getRevenueCatOfferings();
+
+      const productId = isChapterPurchase || books.length > 1
+        ? "com.breakupguide.app.bundle"
+        : (books[0]?.productId || books[0]?.id || "com.breakupguide.app.individualbook");
+
+      const pkg = offerings?.current?.availablePackages.find(
+        (p) => p.product.identifier === productId
+      );
+
+      if (pkg) {
+        customerInfo = await purchaseRevenueCatPackage(pkg);
+      } else {
+        customerInfo = await purchaseRevenueCatProduct(productId);
+      }
+
+      if (customerInfo) {
+        await handlePaymentSuccess();
+      }
+    } catch (e) {
+      console.error("RevenueCat purchase error:", e);
+      const msg = e instanceof Error ? e.message : String(e);
+      toast({ title: "Purchase failed: " + msg, variant: "destructive" });
+    } finally {
+      setProcessing(false);
+    }
+  };
+
   const handlePaymentSuccess = async () => {
     if (!effectiveUID) {
       toast({ title: "Please sign in first to save your purchase.", variant: "destructive" });
@@ -119,13 +157,13 @@ function CheckoutInner() {
       setPurchaseSuccess(true);
     } catch (e) {
       console.error("saveItemsToLibrary error:", e);
-      // Show the actual error message so we can debug
       const msg = e instanceof Error ? e.message : String(e);
       toast({ title: "Error saving purchase: " + msg, variant: "destructive" });
     } finally {
       setProcessing(false);
     }
   };
+
 
   // ── Success screen ────────────────────────────────────────────────────────────
   if (purchaseSuccess) {
@@ -245,6 +283,22 @@ function CheckoutInner() {
                 </div>
               )}
 
+              {/* Native iOS RevenueCat IAP option */}
+              {fromApp && (
+                <div className="space-y-3">
+                  <button
+                    disabled={processing || !appUID}
+                    onClick={handleRevenueCatPurchase}
+                    className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white py-4 rounded-xl font-semibold font-body text-lg transition active:scale-95 shadow-md"
+                  >
+                    {processing ? "Processing..." : `Pay $${totalAmount} with App Store`}
+                  </button>
+                  <p className="text-center text-xs text-gray-400 font-body">
+                    Secure checkout via In-App Purchase
+                  </p>
+                </div>
+              )}
+
               {/* ── DUMMY TEST BUTTON — remove before final App Store submission ── */}
               <div className="bg-yellow-50 border-2 border-dashed border-yellow-400 rounded-xl p-4 space-y-2">
                 <p className="text-yellow-700 font-body text-xs font-semibold text-center">
@@ -259,8 +313,9 @@ function CheckoutInner() {
                 </button>
               </div>
 
-              {/* Real PayPal */}
-              {(fromApp ? !!appUID : !!user) && (
+              {/* Real PayPal (for web) */}
+              {!fromApp && user && (
+
                 <div className="space-y-2">
                   <p className="text-center text-gray-400 font-body text-xs">— or pay with PayPal —</p>
                   <PayPalScriptProvider

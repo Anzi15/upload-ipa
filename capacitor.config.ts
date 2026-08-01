@@ -6,7 +6,17 @@ const config: CapacitorConfig = {
   server: {
     url: 'https://breakup-app-kappa.vercel.app/',
     cleartext: false
-  }
+  },
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 1000,
+      launchAutoHide: true,
+      backgroundColor: "#F0F4FF",
+      showSpinner: false,
+      splashFullScreen: true,
+      splashImmersive: true,
+    },
+  },
 };
 
 export default config;

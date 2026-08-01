@@ -86,6 +86,29 @@ export default function SettingsPanel({ isOpen, onClose, onSettingsChange }: Set
     toast({ title: "Progress reset successfully" })
   }
 
+  const [restoring, setRestoring] = useState(false)
+
+  const handleRestorePurchases = async () => {
+    setRestoring(true)
+    try {
+      const { restoreRevenueCatPurchases } = await import("@/lib/revenuecat")
+      const info = await restoreRevenueCatPurchases()
+      if (info) {
+        toast({ title: "Purchases restored successfully!" })
+      } else {
+        toast({ title: "No previous purchases found to restore." })
+      }
+    } catch (error: any) {
+      toast({
+        title: "Restore Purchases",
+        description: error.message || "Failed to restore purchases.",
+        variant: "destructive",
+      })
+    } finally {
+      setRestoring(false)
+    }
+  }
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
@@ -133,7 +156,16 @@ export default function SettingsPanel({ isOpen, onClose, onSettingsChange }: Set
             </RadioGroup>
           </div>
 
-          <div className="pt-4 border-t">
+          <div className="pt-4 border-t space-y-3">
+            <Button
+              variant="outline"
+              onClick={handleRestorePurchases}
+              disabled={restoring}
+              className="w-full"
+            >
+              {restoring ? "Restoring..." : "Restore Purchases"}
+            </Button>
+
             <Button variant="destructive" onClick={resetProgress} className="w-full">
               Reset Progress
             </Button>
@@ -143,3 +175,4 @@ export default function SettingsPanel({ isOpen, onClose, onSettingsChange }: Set
     </Dialog>
   )
 }
+

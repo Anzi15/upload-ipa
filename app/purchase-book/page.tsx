@@ -87,19 +87,41 @@ function PurchaseBookPage() {
     }
   };
 
-  const handleIOSCheckout = () => {
+  const handleIOSCheckout = async () => {
     if (!user) {
       setShowAuthModal(true);
       return;
     }
-    const uid = user.uid;
-    const params = new URLSearchParams({ uid, bookIds: book.id, from: "app" });
-    const checkoutUrl = `https://breakup-app-kappa.vercel.app/checkout?${params.toString()}`;
-    const bridge = (window as any).median || (window as any).gonative;
-    if (bridge?.window?.open) {
-      bridge.window.open(checkoutUrl, "external");
-    } else {
-      window.location.href = checkoutUrl;
+    setProcessing(true);
+    try {
+      const { purchaseRevenueCatProduct, purchaseRevenueCatPackage, getRevenueCatOfferings } = await import("@/lib/revenuecat");
+      
+      let customerInfo = null;
+      const offerings = await getRevenueCatOfferings();
+      const currentPkg = offerings?.current?.availablePackages.find(
+        (p: any) => p.product.identifier === book.id || p.identifier === book.id
+      );
+
+      if (currentPkg) {
+        customerInfo = await purchaseRevenueCatPackage(currentPkg);
+      } else {
+        const prodId = book.productId || book.id || "com.breakupguide.app.individualbook";
+        customerInfo = await purchaseRevenueCatProduct(prodId);
+      }
+
+      if (customerInfo) {
+        const saved = await saveToLibrary(book, user.uid);
+        if (saved) {
+          toast({ title: "Purchase successful! Book added to your library." });
+          router.push("/library");
+        } else {
+          toast({ title: "Error saving purchase to library. Contact support.", variant: "destructive" });
+        }
+      }
+    } catch (e: any) {
+      toast({ title: e.message || "Purchase failed", variant: "destructive" });
+    } finally {
+      setProcessing(false);
     }
   };
 
@@ -161,17 +183,17 @@ function PurchaseBookPage() {
               )}
 
               {iosApp ? (
-                /* iOS: open real Safari for checkout */
+                /* iOS: Native RevenueCat In-App Purchase */
                 <div className="space-y-3">
                   <p className="text-gray-500 font-body text-sm text-center">
-                    Tap below to complete your purchase securely in Safari.
+                    Complete your purchase securely via App Store In-App Purchase.
                   </p>
                   <button
                     onClick={handleIOSCheckout}
-                    disabled={!user}
+                    disabled={!user || processing}
                     className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white py-4 rounded-xl font-semibold font-body text-lg transition active:scale-95"
                   >
-                    Buy for ${book.price} — Continue in Safari
+                    {processing ? "Processing..." : `Buy for $${book.price}`}
                   </button>
                   {!user && (
                     <p className="text-center text-xs text-gray-400 font-body">
@@ -182,6 +204,7 @@ function PurchaseBookPage() {
               ) : (
                 /* Web: PayPal */
                 user ? (
+
                   <PayPalScriptProvider
                     options={{
                       clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "",
