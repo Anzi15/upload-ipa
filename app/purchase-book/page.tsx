@@ -12,16 +12,12 @@ import AuthModal from "@/components/auth-modal";
 import Image from "next/image";
 import audioBooks from "@/data/books.json";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { Capacitor } from "@capacitor/core";
 import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 
 const isIOSApp = () => {
   if (typeof window === "undefined") return false;
-  const ua = window.navigator.userAgent;
-  const isIOS = /iPhone|iPad|iPod/i.test(ua);
-  const isWrapped =
-    typeof (window as any).gonative !== "undefined" ||
-    (window.navigator as any).standalone;
-  return isIOS && isWrapped;
+  return Capacitor.getPlatform() === "ios";
 };
 
 function PurchaseBookPage() {

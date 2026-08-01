@@ -1,0 +1,17 @@
+Status update — RevenueCat native purchase flow on iOS
+
+What was wrong: After the Capacitor migration, both checkout pages still detected "native iOS app" using removed Median/GoNative globals (window.gonative, standalone) or the ?from=app URL param, which is never set inside the Capacitor WebView. As a result, iOS users saw PayPal / the old web purchase button instead of the RevenueCat App Store in-app purchase flow.
+
+What I changed:
+
+1. app/purchase-book/page.tsx — Replaced the isIOSApp() check (window.gonative + userAgent sniffing) with Capacitor.getPlatform() === "ios". iOS now renders the native App Store IAP button; web renders PayPal.
+
+2. app/checkout/page.js — Added isIOS = Capacitor.getPlatform() === "ios". The native RevenueCat flow now renders when fromApp || isIOS (so it triggers inside the WebView), PayPal is hidden on iOS, and the native button's disabled state now uses effectiveUID so it enables for the in-app signed-in user.
+
+3. app/chapter/[id]/page.tsx — Removed the old iOS Safari-redirect branch (window.gonative/median bridge lookup + base64 books URL). Chapter purchases now save the bundle (with chapterId + price injected so the /checkout page still detects the flat $125 chapter bundle and tags library entries) and navigate in-app to /checkout, which triggers the native RevenueCat flow on iOS. The platform gate now lives in one place (/checkout) instead of being duplicated.
+
+4. breakup-app/ investigation — Confirmed it is DEAD CODE and deleted it. It was a stale nested git repo (gitlink, commit 98be2dd) of the pre-Capacitor app with its own remote at github.com/Anzi15/breakup-app-capacitor (history preserved there). It still contained the legacy window.median code, had no ios/ or capacitor.config.ts, and nothing in the root build, CI (.github/workflows/ios-build.yml), or app code referenced it. Removed from git index (staged, not committed) and deleted from disk.
+
+Verification: tsc --noEmit passes for all three modified files (remaining errors are pre-existing and unrelated: pdfjs-worker, react-day-picker, auth-modal nonce).
+
+Status: changes are uncommitted. Working tree changes: app/chapter/[id]/page.tsx, app/checkout/page.js, app/purchase-book/page.tsx modified; breakup-app/ staged for deletion; prompt.txt untracked.

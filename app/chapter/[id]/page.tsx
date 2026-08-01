@@ -189,42 +189,18 @@ const proceedToCheckout = async () => {
     // Small delay to ensure UI updates
     await new Promise(resolve => setTimeout(resolve, 100));
     
-    saveBundle([...selectedAudioFile]);
-
-    // On iOS inside the Median app, payment must happen in real Safari.
-    // We pass the user UID and book IDs so the web checkout can save
-    // the purchase to Firestore without needing a separate login.
-    const isIOS = /iPhone|iPad|iPod/i.test(window.navigator.userAgent);
-    const isWrapped = typeof (window as any).gonative !== "undefined" || (window.navigator as any).standalone;
-    if (isIOS && isWrapped) {
-      const currentUser = auth.currentUser;
-      const uid = currentUser?.uid || "";
-      // Chapter Book objects only have { title, youtubeUrl, thumbnail } — no
-      // id/bookTitle field, and they don't exist in books.json, so an ID-based
-      // lookup on the checkout side can never resolve them. Pass the full
-      // book data through instead, base64-encoded so it survives the URL.
-      const booksPayload = selectedAudioFile.map((b: any) => ({
-        bookTitle: b.title || b.bookTitle || "AudioBook",
-        videoUrl: b.youtubeUrl || b.videoUrl || "",
-        thumbnail: b.thumbnail || "/placeholder.svg",
+    saveBundle(
+      selectedAudioFile.map((b: any) => ({
+        ...b,
         chapterId,
         price: 25,
-      }));
-      const booksParam =
-        typeof window !== "undefined"
-          ? window.btoa(unescape(encodeURIComponent(JSON.stringify(booksPayload))))
-          : "";
-      const params = new URLSearchParams({ uid, books: booksParam, from: "app" });
-      const checkoutUrl = `https://breakup-app-kappa.vercel.app/checkout?${params.toString()}`;
-      const bridge = (window as any).median || (window as any).gonative;
-      if (bridge?.window?.open) {
-        bridge.window.open(checkoutUrl, "external");
-      } else {
-        window.location.href = checkoutUrl;
-      }
-      return;
-    }
+      }))
+    );
 
+    // On iOS inside the Capacitor app, checkout runs in-app — the /checkout
+    // page gates the native RevenueCat flow on Capacitor.getPlatform() ===
+    // "ios". The old Safari redirect (and its gonative/median bridge lookup)
+    // is gone; all platforms now navigate to /checkout directly.
     router.push("/checkout");
 };
 

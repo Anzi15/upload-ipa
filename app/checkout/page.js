@@ -13,6 +13,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import booksData from "@/data/books.json";
+import { Capacitor } from "@capacitor/core";
 
 // ─── Save books to a user's library via the server ────────────────────────────
 // Uses the /api/save-purchase route (Firebase Admin, server-side) instead of
@@ -41,6 +42,9 @@ function CheckoutInner() {
   // fromApp mode — when Safari was opened from the iOS app
   const fromApp = searchParams.get("from") === "app";
   const appUID = searchParams.get("uid") || "";
+
+  // Native iOS (Capacitor) — run the RevenueCat in-app purchase flow
+  const isIOS = typeof window !== "undefined" && Capacitor.getPlatform() === "ios";
 
   // Chapter-flow purchases pass full book data as base64-encoded JSON
   // (the old bookIds approach couldn't resolve chapter books because they
@@ -284,10 +288,10 @@ function CheckoutInner() {
               )}
 
               {/* Native iOS RevenueCat IAP option */}
-              {fromApp && (
+              {(fromApp || isIOS) && (
                 <div className="space-y-3">
                   <button
-                    disabled={processing || !appUID}
+                    disabled={processing || !effectiveUID}
                     onClick={handleRevenueCatPurchase}
                     className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white py-4 rounded-xl font-semibold font-body text-lg transition active:scale-95 shadow-md"
                   >
@@ -314,7 +318,7 @@ function CheckoutInner() {
               </div>
 
               {/* Real PayPal (for web) */}
-              {!fromApp && user && (
+              {!fromApp && !isIOS && user && (
 
                 <div className="space-y-2">
                   <p className="text-center text-gray-400 font-body text-xs">— or pay with PayPal —</p>
