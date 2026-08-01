@@ -4,7 +4,7 @@ const config: CapacitorConfig = {
   appId: 'co.median.ios.zryayz',
   appName: 'The Ultimate Break-up Guide',
   server: {
-    url: 'https://breakup-app-kappa.vercel.app/',
+    url: 'https://break-up-app-ios.vercel.app/',
     cleartext: false
   },
   plugins: {

@@ -70,7 +70,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
     try {
       if (Capacitor.isNativePlatform()) {
         const { Browser } = await import("@capacitor/browser")
-        const authDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "breakup-app-kappa.vercel.app"
+        const authDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "break-up-app-ios.vercel.app"
         const authUrl = `https://${authDomain}/__/auth/handler`
         await Browser.open({ url: authUrl })
       } else {
@@ -98,7 +98,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
         const { SignInWithApple } = await import("@capacitor-community/apple-sign-in")
         const result = await SignInWithApple.authorize({
           clientId: "co.median.ios.zryayz",
-          redirectURI: "https://breakup-app-kappa.vercel.app",
+          redirectURI: "https://break-up-app-ios.vercel.app",
           scopes: "email name",
         })
 

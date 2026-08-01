@@ -4,7 +4,7 @@
 
 A mobile app (iOS + Android) for **mindsetsuccess.com**, built as a self-help/guide product around breakup recovery. Users can browse and read guide/book content, with paid content unlocked via purchase.
 
-- **Web app:** Built in **Next.js**, hosted at `https://breakup-app-kappa.vercel.app`
+- **Web app:** Built in **Next.js**, hosted at `https://break-up-app-ios.vercel.app`
 - **Android:** Already approved and live on Google Play (no issues there)
 - **iOS:** Originally wrapped using **Median.co** (a no-code WebView wrapper). Currently mid-migration to **Capacitor** (open-source, self-owned native project) — see "Why we moved off Median" below.
 
