@@ -42,6 +42,12 @@ jobs:
             echo "target=-project App.xcodeproj" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Set version and build number
+        run: |
+          cd ios/App
+          xcrun agvtool new-marketing-version 1.2
+          xcrun agvtool new-version -all $((4 + ${{ github.run_number }}))
+
       - name: Install App Store Connect API Key
         env:
           API_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}
